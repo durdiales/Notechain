@@ -4,15 +4,17 @@ This repository contains some code examples focused on developing a Blockchain e
 
 In order to get a deeper knowledge about how functional programming may help to develop modern applications, focus will be on how to develop some multi-tier system.
 
-## Specifications
+# Specifications
 
 -	Git
 -	IDE - IntelliJ 18.x (https://www.jetbrains.com/idea/download/download-thanks.html?platform=windows&code=IIC)
 -	sbt 0.13.5 or later (http://www.scala-sbt.org/download.html)
 -	Scala 2.11.8 or later (https://downloads.lightbend.com/scala/2.12.4/scala-2.12.4.msi)
--   Scorex  
+-   Scorex
+-   Postman (https://www.getpostman.com/)  
 
 ## How to build scorex version
+
 
 In order to use this project, we need to build scorex by hand to this specific commit.
 Commit: `6a100ea0`
