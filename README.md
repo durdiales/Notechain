@@ -31,6 +31,14 @@ We need to run the main, using a `setting.conf` file:
 sbt "run ./src/main/resources/settings.conf"
 ```
 
+## Basic concepts of Scorex-2
+
+Introduction
+- It is experimental and still raw new major release of the Scorex
+- Generic Framework
+- Does not force to a chain structure or blocks
+
+
 ## Show basic concepts of scorex-2
 ## Explain the model
 ## Expose a rest as example execution
