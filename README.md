@@ -25,6 +25,12 @@ Commit: `6a100ea0`
 - For windows: `sbt publishLocal`
 
 ## How to run the project
+
+We need to run the main, using a `setting.conf` file:
+```
+sbt "run ./src/main/resources/settings.conf"
+```
+
 ## Show basic concepts of scorex-2
 ## Explain the model
 ## Expose a rest as example execution
