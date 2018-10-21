@@ -40,6 +40,15 @@ Introduction
 - Generic Framework
 - Does not force to a chain structure or blocks
 
+### NodeViewHolder
+
+It is the type that represents the state maintained by the nodes. It is clearly separated from the logic of the system, and the presence of mutability is explicit.
+It consists of the following parts:
+
+1. History: previous activity history. It would be what represents the blockchain
+2. Minimal state: minimum information that allows to validate incoming requests. Represents the status of the chain, which can be extracted from the history. these would be in the case of a cryptocurrency, for example, a collection of accounts and their balance sheets, with their respective public keys.
++ memory pool: buffer to store temporary information, for example of requests to validate
++ vault: structure to store private information of the node, for example private keys, in which case it would be called Wallet
 
 ## Show basic concepts of scorex-2
 ## Explain the model
