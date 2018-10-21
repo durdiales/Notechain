@@ -50,6 +50,16 @@ It consists of the following parts:
 + memory pool: buffer to store temporary information, for example of requests to validate
 + vault: structure to store private information of the node, for example private keys, in which case it would be called Wallet
 
+### Proof and Proposition
+
+The propositions are in almost all the components of scorex, so they are an important element to understand.
+It is a way to keep information safe, and that you can only interact (read, modify, etc) with it if a test is provided that satisfies that proposition.
+
+This Proof is defined as `Proof [P <: Proposition]` in scorex
+
+A Proof can be represented by a signature that is added to a transaction, which can only be generated with a private key, but can be checked with the corresponding public key.
+
+
 ## Show basic concepts of scorex-2
 ## Explain the model
 ## Expose a rest as example execution
