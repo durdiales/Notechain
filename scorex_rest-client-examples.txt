@@ -1,0 +1,68 @@
+-----------------------------------------------------------------
+-- Postman                                                     --
+-----------------------------------------------------------------
+
+----------------------------------------------------
+-- Http Resquest Examples:
+----------------------------------------------------
+
+----------------------------------------------------
+1. POST - create or update noteGroups and notes
+----------------------------------------------------
+
+Method: POST
+Request URL: http://localhost:9085/note
+Headers:
+        Header name: Content-Type
+		Header value: application/json
+Body:
+        Body Content type: application/json
+		Editor view: Text input
+		{
+		    "title": "notebook 1",
+		    "notes": ["task1", "task2", "Task3"]
+		}
+
+----------------------------------------------------
+2. GET - get all noteGroups
+----------------------------------------------------
+
+Method: GET
+Request URL: http://localhost:9085/note
+Headers:
+        Header name: Content-Type
+		Header value: application/json
+
+----------------------------------------------------
+3. GET - get noteGroup with <id>
+----------------------------------------------------
+
+Method: GET
+Request URL: http://localhost:9085/note/<id>
+for example: "id": "6NudbTsm3j2BYQqtkpyCC1HbuDSoMnsDcdVBrbfoz9zg",
+
+Headers:
+        Header name: Content-Type
+		Header value: application/json
+
+----------------------------------------------------
+4. GET - get all chain blocks
+----------------------------------------------------
+
+Method: GET
+Request URL: http://localhost:9085/debug/chain
+Headers:
+        Header name: Content-Type
+		Header value: application/json
+
+----------------------------------------------------
+5. GET - get last <number> of block references from chain
+----------------------------------------------------
+
+Method: GET
+Request URL: http://localhost:9085/stats/tail/<number>
+for example: <number> = 10
+
+Headers:
+        Header name: Content-Type
+		Header value: application/json
