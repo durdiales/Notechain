@@ -4,7 +4,7 @@ This repository contains some code examples focused on developing a Blockchain e
 
 In order to get a deeper knowledge about how functional programming may help to develop modern applications, focus will be on how to develop some multi-tier system.
 
-# Specifications
+## Specifications
 
 -	Git
 -	IDE - IntelliJ 18.x (https://www.jetbrains.com/idea/download/download-thanks.html?platform=windows&code=IIC)
@@ -14,7 +14,6 @@ In order to get a deeper knowledge about how functional programming may help to 
 -   Postman (https://www.getpostman.com/)  
 
 ## How to build scorex version
-
 
 In order to use this project, we need to build scorex by hand to this specific commit.
 Commit: `6a100ea0`
@@ -35,7 +34,7 @@ sbt "run ./src/main/resources/settings.conf"
 
 ## Basic concepts of Scorex-2
 
-Introduction
+### Introduction
 - It is experimental and still raw new major release of the Scorex
 - Generic Framework
 - Does not force to a chain structure or blocks
@@ -59,7 +58,87 @@ This Proof is defined as `Proof [P <: Proposition]` in scorex
 
 A Proof can be represented by a signature that is added to a transaction, which can only be generated with a private key, but can be checked with the corresponding public key.
 
+### Box
 
-## Show basic concepts of scorex-2
-## Explain the model
-## Expose a rest as example execution
+A Box is an information container, which is protected by a Proposition. The contents of the Box will only be accessible if the proof that fulfills the proposal is provided.
+The Box is the base element of information in scorex.
+
+
+### NodeViewModifier aka Transaction
+
+Transactions in scorex are something that can modify the state of a node. Scorex provides a `Transaction` type that is nothing more than a special case of` NodeViewModifier`. Most transactions are going to be something that creates, modifies or destroys `Box`s
+
+### Block
+
+A Block is nothing more than a group of transactions, and in fact, extends just like `Transaction` from` NodeViewModifier`, only that through another trait: `PersistentNodeViewModifier`.
+This is because the transactions as such are not saved in the history (Blockchain) and are the blocks that are saved, so they have the functionality to persist in the chain.
+
+Still, it's not a mandatory concept in Scorex. You can design a system that does not use blocks.
+
+### History
+
+Scorex uses a generic way of representing the BlockChain that, in fact, does not force it to be a linear structure, but could also have a tree structure, for example.
+This concept is `History`. The `BlockChain` class defined in Scorex is a subtype of` History`
+
+## Http Resquest Examples:
+
+1.- POST - create or update noteGroups and notes
+
+```
+Method: POST
+Request URL: http://localhost:9085/note
+Headers:
+        Header name: Content-Type
+		Header value: application/json
+Body:
+        Body Content type: application/json
+		Editor view: Text input
+		{
+		    "title": "notebook 1",
+		    "notes": ["task1", "task2", "Task3"]
+		}
+```
+
+2.- GET - get all noteGroups
+
+```
+Method: GET
+Request URL: http://localhost:9085/note
+Headers:
+        Header name: Content-Type
+		Header value: application/json
+```
+
+3.- GET - get noteGroup with <id>
+
+```
+Method: GET
+Request URL: http://localhost:9085/note/<id>
+for example: "id": "6NudbTsm3j2BYQqtkpyCC1HbuDSoMnsDcdVBrbfoz9zg",
+
+Headers:
+        Header name: Content-Type
+		Header value: application/json
+```
+
+4.- GET - get all chain blocks
+
+```
+Method: GET
+Request URL: http://localhost:9085/debug/chain
+Headers:
+        Header name: Content-Type
+		Header value: application/json
+```
+
+5.- GET - get last <number> of block references from chain
+
+```
+Method: GET
+Request URL: http://localhost:9085/stats/tail/<number>
+for example: <number> = 10
+
+Headers:
+        Header name: Content-Type
+		Header value: application/json
+```
