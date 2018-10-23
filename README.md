@@ -66,7 +66,7 @@ The Box is the base element of information in scorex.
 
 ### NodeViewModifier aka Transaction
 
-Transactions in scorex are something that can modify the state of a node. Scorex provides a `Transaction` type that is nothing more than a special case of` NodeViewModifier`. Most transactions are going to be something that creates, modifies or destroys `Box`s
+Transactions in scorex are something that can modify the state of a node. Scorex provides a `Transaction` type that is nothing more than a special case of` NodeViewModifier`. Most transactions are going to be something that creates, modifies or destroys a `Box`
 
 ### Block
 
@@ -89,10 +89,10 @@ Method: POST
 Request URL: http://localhost:9085/note
 Headers:
         Header name: Content-Type
-		Header value: application/json
+	Header value: application/json
 Body:
         Body Content type: application/json
-		Editor view: Text input
+	Editor view: Text input
 		{
 		    "title": "notebook 1",
 		    "notes": ["task1", "task2", "Task3"]
@@ -106,7 +106,7 @@ Method: GET
 Request URL: http://localhost:9085/note
 Headers:
         Header name: Content-Type
-		Header value: application/json
+	Header value: application/json
 ```
 
 3.- GET - get noteGroup with <id>
@@ -118,7 +118,7 @@ for example: "id": "6NudbTsm3j2BYQqtkpyCC1HbuDSoMnsDcdVBrbfoz9zg",
 
 Headers:
         Header name: Content-Type
-		Header value: application/json
+	Header value: application/json
 ```
 
 4.- GET - get all chain blocks
@@ -128,7 +128,7 @@ Method: GET
 Request URL: http://localhost:9085/debug/chain
 Headers:
         Header name: Content-Type
-		Header value: application/json
+	Header value: application/json
 ```
 
 5.- GET - get last <number> of block references from chain
@@ -140,5 +140,5 @@ for example: <number> = 10
 
 Headers:
         Header name: Content-Type
-		Header value: application/json
+	Header value: application/json
 ```
